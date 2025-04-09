@@ -32,35 +32,58 @@
             "firstName": "Rainu",
             "lastName": "Ittycheriah",
             "computerId": 1,
-            "age": 34
+            "age": 34,
+            "departmentId": 1
         },
         {
             "id": 2,
             "firstName": "Lana",
             "lastName": "Petrov",
             "computerId": 2,
-            "age": 29
+            "age": 29,
+            "departmentId": 4
         },
         {
             "id": 3,
             "firstName": "Jamal",
             "lastName": "Nguyen",
             "computerId": 5,
-            "age": 41
+            "age": 41,
+            "departmentId": 3
         },
         {
             "id": 4,
             "firstName": "Sofia",
             "lastName": "Martinez",
             "computerId": 3,
-            "age": 27
+            "age": 27,
+            "departmentId": 2
         },
         {
             "id": 5,
             "firstName": "Ethan",
             "lastName": "Carter",
             "computerId": 4,
-            "age": 38
+            "age": 38,
+            "departmentId": 1
         }
+    ],
+    "departments": [
+        {
+            "id": 1,
+            "name": "Engineering"
+          },
+          {
+            "id": 2,
+            "name": "Human Resources"
+          },
+          {
+            "id": 3,
+            "name": "Marketing"
+          },
+          {
+            "id": 4,
+            "name": "Finance"
+          }
     ]
 }

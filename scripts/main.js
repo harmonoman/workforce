@@ -6,12 +6,9 @@ const render = async () => {
 
     const employees = await DisplayEmployees();
 
-
     const composedHTML = `
-        <h2>Three Blind Mice Consulting</h2>
+        <h1>Three Blind Mice Consulting</h1>
         ${employees}
-
-
     `
 
     container.innerHTML = composedHTML;

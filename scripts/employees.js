@@ -1,20 +1,21 @@
 export const DisplayEmployees = async () => {
-    const employees = await fetch("http://localhost:8088/employees?_expand=computer").then(res => res.json());
+    const employees = await fetch("http://localhost:8088/employees?_expand=computer&_expand=department").then(res => res.json());
 
-    let employeeHTML = `<ul class="employee-list">`
-
-    const employeeArray = employees.map((employee) => {
+    const employeeHTML = employees.map((employee) => {
         return `
-            <li class="employee-card">
-                <h3>${employee.firstName} ${employee.lastName}</h3>
-                <p>Age: ${employee.age}</p>
-                <p>Computer Model: ${employee.computer.model}</p>
-                <p>Manufacture Year: ${employee.computer.year}</p>
-            </li>
+            <div class="employee">
+                <header class="employee_name">
+                    <h2>${employee.firstName} ${employee.lastName}</h2>
+                </header>
+                <section class="employee_computer">
+                    Currently using a ${employee.computer.year} ${employee.computer.model}
+                </section>
+                <section class="employee_department">
+                    Works in the ${employee.department.name} department
+                </section>
+            </div>
         `
     }).join("");
-
-    employeeHTML += employeeArray + `</ul>`;
 
     return employeeHTML;
 }
