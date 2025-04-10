@@ -1,35 +1,48 @@
 ```mermaid
 erDiagram
 
-Employee ||--|| Computer : "uses"
-Employee }o--|| Department : "works in"
-Employee }o--|| Location : "works at"
+Employees ||--|| Computers : "uses"
+Employees }o--|| Departments : "works in"
+Employees }o--|| Locations : "works at"
+Employees ||--o{ EmployeeCustomers : "assigned to"
+Customers ||--o{ EmployeeCustomers : "served by"
 
 
 
-Employee {
+Employees {
     int id pk
-    string firstName
-    string lastName
+    varchar firstName
+    varchar lastName
     int age
     int computerId fk
     int departmentId fk
     int locationId fk
 }
 
-Computer {
+Computers {
     int id pk
-    string model
+    varchar model
     int year
 }
 
-Department {
+Departments {
     int id pk
-    string name
+    varchar name
 }
 
-Location {
+Locations {
     int id pk
-    string cityName
-    string state
+    varchar cityName
+    varchar state
+}
+
+Customers {
+    int id pk
+    varchar name
+}
+
+EmployeeCustomers {
+    int id pk
+    int customerId fk
+    int employeeId fk
 }
