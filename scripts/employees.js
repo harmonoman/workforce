@@ -37,5 +37,6 @@ export const DisplayEmployees = async () => {
         }).join("")
     }
     `
+    
     return employeesHTML;
 }
